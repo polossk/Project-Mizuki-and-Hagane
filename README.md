@@ -7,15 +7,15 @@
 
 ## Home
 
-Concise website project for _C_onference _S_ite of the 11th National Annual Meeting of _C_omputational _M_athematics, alias CSCM 2017. Basicly, this website was build by nodejs, mongodb and nginx. Some python scripts of database operation were provided.
+Concise website project for **C**onference **S**ite of the 11th National Annual Meeting of **C**omputational **M**athematics, alias CSCM 2017. Basicly, this website was build by nodejs, mongodb and nginx. Some python scripts of database operation were provided.
 
 ## Content
 
 * Project Hagane, static website for news release
 * Project Mizuki, concise dynamic website for uesr registration
-* folder pyscript, python scripts of database operation
-* folder nginx-config, the nginx config files of this project, using fake hostname(be awared of that)
-* 7zip file public.7z, the static resources of the websites, unzip it to the `public` folder in Mizuki and the `root` folder of Hagane.
+* Folder pyscript, python scripts of database operation
+* Folder nginx-config, the nginx config files of this project, using fake hostname(be awared of that)
+* 7zip file `public.7z`, the static resources of the websites, unzip it to the `public` folder in Mizuki and the `root` folder of Hagane.
 
 ## Note
 
