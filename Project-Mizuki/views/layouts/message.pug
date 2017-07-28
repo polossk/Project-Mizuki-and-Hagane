@@ -1,0 +1,15 @@
+//- layouts/message.pug
+include ../includes/pagehead
+body.login
+	include ../includes/logo
+	// BEGIN LOGIN
+	div.content
+		h3.form-title.font-green #{msg_title}
+		.alert.alert-danger
+			button.close(data-close='alert')
+			span #{msg_content}
+		.create-account
+			p
+				a(href= msg_return) #{msg_return_hint}
+	include ../includes/footer
+include ../includes/pagetail

@@ -1,0 +1,58 @@
+//- includes/pagetail.pug
+// BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time)
+// BEGIN CORE PLUGINS
+script(src='../assets/global/plugins/jquery.min.js', type='text/javascript')
+script(src='../assets/global/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
+script(src='../assets/global/plugins/js.cookie.min.js', type='text/javascript')
+script(src='../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js', type='text/javascript')
+script(src='../assets/global/plugins/jquery.blockui.min.js', type='text/javascript')
+script(src='../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js', type='text/javascript')
+// END CORE PLUGINS
+
+// BEGIN PAGE LEVEL PLUGINS
+script(src='../assets/global/plugins/jquery-validation/js/jquery.validate.min.js', type='text/javascript')
+script(src='../assets/global/plugins/jquery-validation/js/additional-methods.min.js', type='text/javascript')
+script(src='../assets/global/plugins/select2/js/select2.full.min.js', type='text/javascript')
+// END PAGE LEVEL PLUGINS
+
+// BEGIN THEME GLOBAL SCRIPTS
+script(src='../assets/global/scripts/app.min.js', type='text/javascript')
+// END THEME GLOBAL SCRIPTS
+
+// BEGIN PAGE LEVEL SCRIPTS
+script(src='../assets/pages/scripts/login.min.js', type='text/javascript')
+//- script(src='../assets/pages/scripts/profile.min.js', type='text/javascript')
+// END PAGE LEVEL SCRIPTS
+
+// BEGIN THEME LAYOUT SCRIPTS
+script(src='../assets/layouts/layout/scripts/layout.min.js', type='text/javascript')
+script(src='../assets/layouts/layout/scripts/demo.min.js', type='text/javascript')
+// END THEME LAYOUT SCRIPTS
+
+//- // BEGIN MATHJAX PLUGIN SCRIPTS
+//- script(type="text/javascript" src='http://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML')
+//- // END MATHJAX PLUGIN SCRIPTS
+
+// BEGIN MD5 PLUGIN SCRIPTS
+script(type="text/javascript" src='../javascripts/md5.min.js')
+// END MD5 PLUGIN SCRIPTS
+
+script(type='text/javascript').
+	$(function(){
+		if ($("#report_true").attr("checked") == "checked") {
+			$("#report_content").show(); }
+		if ($("#report_false").attr("checked") == "checked") {
+			$("#report_content").hide(); }
+		$("#report_true").click(function(){$("#report_content").show();});
+		$("#report_false").click(function(){$("#report_content").hide();});
+	});
+
+script(type='text/javascript').
+	$(function(){
+		if ($("#hotel_true").attr("checked") == "checked") {
+			$("#hotel_content").show(); }
+		if ($("#hotel_false").attr("checked") == "checked") {
+			$("#hotel_content").hide(); }
+		$("#hotel_true").click(function(){$("#hotel_content").show();});
+		$("#hotel_false").click(function(){$("#hotel_content").hide();});
+	});

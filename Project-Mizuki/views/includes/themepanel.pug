@@ -1,0 +1,56 @@
+//- includes/themepanel.pug
+// BEGIN THEME PANEL
+.theme-panel.hidden-xs.hidden-sm
+	.toggler  
+	.toggler-close  
+	.theme-options
+		.theme-option.theme-colors.clearfix
+			span  THEME COLOR 
+			ul
+				li.color-default.current.tooltips(data-style='default', data-container='body', data-original-title='Default')  
+				li.color-darkblue.tooltips(data-style='darkblue', data-container='body', data-original-title='Dark Blue')  
+				li.color-blue.tooltips(data-style='blue', data-container='body', data-original-title='Blue')  
+				li.color-grey.tooltips(data-style='grey', data-container='body', data-original-title='Grey')  
+				li.color-light.tooltips(data-style='light', data-container='body', data-original-title='Light')  
+				li.color-light2.tooltips(data-style='light2', data-container='body', data-html='true', data-original-title='Light 2')  
+		.theme-option
+			span  Layout 
+			select.layout-option.form-control.input-sm
+				option(value='fluid', selected='selected') Fluid
+				option(value='boxed') Boxed
+		.theme-option
+			span  Header 
+			select.page-header-option.form-control.input-sm
+				option(value='fixed', selected='selected') Fixed
+				option(value='default') Default
+		.theme-option
+			span  Top Menu Dropdown
+			select.page-header-top-dropdown-style-option.form-control.input-sm
+				option(value='light', selected='selected') Light
+				option(value='dark') Dark
+		.theme-option
+			span  Sidebar Mode
+			select.sidebar-option.form-control.input-sm
+				option(value='fixed') Fixed
+				option(value='default', selected='selected') Default
+		.theme-option
+			span  Sidebar Menu 
+			select.sidebar-menu-option.form-control.input-sm
+				option(value='accordion', selected='selected') Accordion
+				option(value='hover') Hover
+		.theme-option
+			span  Sidebar Style 
+			select.sidebar-style-option.form-control.input-sm
+				option(value='default', selected='selected') Default
+				option(value='light') Light
+		.theme-option
+			span  Sidebar Position 
+			select.sidebar-pos-option.form-control.input-sm
+				option(value='left', selected='selected') Left
+				option(value='right') Right
+		.theme-option
+			span  Footer 
+			select.page-footer-option.form-control.input-sm
+				option(value='fixed') Fixed
+				option(value='default', selected='selected') Default
+// END THEME PANEL

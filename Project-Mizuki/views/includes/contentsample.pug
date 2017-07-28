@@ -1,0 +1,53 @@
+//- includes/contentsample.pug
+// BEGIN CONTENT
+.page-content-wrapper
+	// BEGIN CONTENT BODY
+	.page-content
+		// BEGIN PAGE HEADER
+		include themepanel
+		// BEGIN PAGE BAR
+		.page-bar
+			ul.page-breadcrumb
+				li
+					a(href='index.html') Home
+					i.fa.fa-circle
+				li
+					a(href='#') Blank Page
+					i.fa.fa-circle
+				li
+					span Page Layouts
+			.page-toolbar
+				.btn-group.pull-right
+					button.btn.green.btn-sm.btn-outline.dropdown-toggle(type='button', data-toggle='dropdown')
+						| Actions
+						i.fa.fa-angle-down
+					ul.dropdown-menu.pull-right(role='menu')
+						li
+							a(href='#')
+								i.icon-bell
+								|  Action
+						li
+							a(href='#')
+								i.icon-shield
+								|  Another action
+						li
+							a(href='#')
+								i.icon-user
+								|  Something else here
+						li.divider  
+						li
+							a(href='#')
+								i.icon-bag
+								|  Separated link
+		// END PAGE BAR
+		// BEGIN PAGE TITLE
+		h1.page-title
+			| Blank Page Layout
+			small blank page layout
+		// END PAGE TITLE
+		// END PAGE HEADER
+		.note.note-info
+			p
+				| A black page template with a minimal dependency assets to use as a base for any custom page you create
+	// END CONTENT BODY
+// END CONTENT

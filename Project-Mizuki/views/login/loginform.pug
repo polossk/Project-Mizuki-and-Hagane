@@ -1,0 +1,27 @@
+//- login/loginform.pug
+// BEGIN LOGIN FORM
+form.login-form(action='trylogin', method='post')
+	h3.form-title.font-green 登录
+	.alert.alert-danger.display-hide
+		button.close(data-close='alert')
+		span  您还没有输入任何内容
+	.alert.alert-danger
+		button.close(data-close='alert')
+		span 系统已经正式上线，感谢用户的测试与建议。所有测试数据已经清空，在测试阶段注册的用户麻烦您重新注册。
+	.alert.alert-danger
+		button.close(data-close='alert')
+		span 经与中国数学会计算数学分会协商，注册截止日期顺延一周，延长到<b>5月27日</b>。请尚未注册的老师同学尽快完成网上注册，已注册的老师和同学请尽快完善信息，特别是报告、住宿登记等信息。
+	.form-group
+		// ie8, ie9 does not support html5 placeholder, so we just show field title for that
+		label.control-label.visible-ie8.visible-ie9 登录邮箱
+		input.form-control.form-control-solid.placeholder-no-fix(type='text', autocomplete='off', placeholder='登录邮箱', name='username')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 Password
+		input#login_password.form-control.form-control-solid.placeholder-no-fix(type='password', autocomplete='off', placeholder='Password', name='password')
+	.form-actions
+		button.btn.green(type='submit') 登录
+		a#forget-password.forget-password(href='javascript:;') 忘记密码?
+	.create-account
+		p
+			a#register-btn(href='javascript:;') 现在注册
+// END LOGIN FORM

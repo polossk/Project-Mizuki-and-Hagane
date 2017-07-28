@@ -1,0 +1,22 @@
+//- login/resetpasswdform.pug
+// BEGIN RESETPASSSWORD FORM
+form.request-form(action='/resetpasswd/requesting', method='post')
+	h3.font-green #{'重置用户 ' + email + ' 的密码'}
+	p.hint  请输入您的新密码: 
+	.alert.alert-danger.display-hide
+		button.close(data-close='alert')
+		span  您还没有输入任何内容
+	.form-group.hide
+		label.control-label.visible-ie8.visible-ie9 username
+		input.form-control.placeholder-no-fix(type='text', autocomplete='off', placeholder= email, name='username', value= email)
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 New Password
+		input#request_password.form-control.placeholder-no-fix(type='password', autocomplete='off', placeholder='New Password', name='password')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 Re-type Your New Password
+		input#request_repassword.form-control.placeholder-no-fix(type='password', autocomplete='off', placeholder='Re-type Your New Password', name='rpassword')
+	.form-group.hide
+		label.control-label.visible-ie8.visible-ie9 RESETTOKEN
+		input.form-control.placeholder-no-fix(type='password', autocomplete='off', placeholder='RESETTOKEN', name='token', value= token)
+	.form-actions
+		button#request-submit-btn.btn.btn-success(type='submit') 提交

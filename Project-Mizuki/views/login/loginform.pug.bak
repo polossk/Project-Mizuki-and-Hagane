@@ -1,0 +1,24 @@
+//- login/loginform.pug
+// BEGIN LOGIN FORM
+form.login-form(action='trylogin', method='post')
+	h3.form-title.font-green 登录
+	.alert.alert-danger.display-hide
+		button.close(data-close='alert')
+		span  您还没有输入任何内容
+	.alert.alert-danger
+		button.close(data-close='alert')
+		span  此系统仍在测试阶段，可能会随时对数据进行不可逆的更改
+	.form-group
+		// ie8, ie9 does not support html5 placeholder, so we just show field title for that
+		label.control-label.visible-ie8.visible-ie9 登录邮箱
+		input.form-control.form-control-solid.placeholder-no-fix(type='text', autocomplete='off', placeholder='登录邮箱', name='username')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 Password
+		input#login_password.form-control.form-control-solid.placeholder-no-fix(type='password', autocomplete='off', placeholder='Password', name='password')
+	.form-actions
+		button.btn.green(type='submit') 登录
+		a#forget-password.forget-password(href='javascript:;') 忘记密码?
+	.create-account
+		p
+			a#register-btn(href='javascript:;') 现在注册
+// END LOGIN FORM

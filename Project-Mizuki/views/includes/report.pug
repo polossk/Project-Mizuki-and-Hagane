@@ -1,0 +1,47 @@
+//- includes/report.pug
+
+mixin form_radio_aye(flag, rname)
+	if (flag)
+		input#report_true(type='radio', checked='checked', name= rname, value='true')
+	else
+		input#report_true(type='radio', name= rname, value='true')
+
+mixin form_radio_nay(flag, rname)
+	if (flag)
+		input#report_false(type='radio', name= rname, value='false')
+	else
+		input#report_false(type='radio', checked='checked', name= rname, value='false')
+
+mixin form_radio(flag, rname)
+	.form-control
+		span.col-md-6
+			+form_radio_aye(flag, rname)
+			|   是
+		span.col-md-6
+			+form_radio_nay(flag, rname)
+			|   否
+
+
+.alert.alert-danger
+	button.close(data-close='alert')
+	span  如果申请作报告，请确认报告题目，作者（多个作者请以逗号分隔），摘要（摘要不支持公式输入）
+
+form.report-form(role='form', action='/tryreport', method='post')
+	.form-group.hide
+		label.control-label username
+		input.form-control.placeholder-no-fix(type='text', placeholder='username', name='username', value= user.username)
+	.form-group
+		label.control-label 是否做报告
+		+form_radio(user.goingtoreport, 'goingtoreport')
+	#report_content
+		.form-group
+			label.control-label 报告题目
+			input.form-control.placeholder-no-fix(type='text', placeholder='报告题目', name='reporttitle', value= user.reporttitle)
+		.form-group
+			label.control-label 作者
+			input.form-control.placeholder-no-fix(type='text', placeholder='作者', name='reportauthor', value= user.reportauthor)
+		.form-group
+			label.control-label 报告摘要
+			textarea.form-control(rows="10", wrap="virtual", name='reportabstract', value=user.reportabstract)= user.reportabstract
+	.margiv-top-10
+		button#report-submit-btn.btn.btn-success(type='submit') 保存修改

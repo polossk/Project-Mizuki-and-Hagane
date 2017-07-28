@@ -1,0 +1,54 @@
+//- login/registrationform.pug
+// BEGIN REGISTRATION FORM
+form.register-form(action='tryreg', method='post')
+	h3.font-green 注册
+	p.hint  请输入你的账号信息: 
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 Email(用户名)
+		input.form-control.placeholder-no-fix(type='text', autocomplete='off', placeholder='Email(用户名)', name='username')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 Password
+		input#register_password.form-control.placeholder-no-fix(type='password', autocomplete='off', placeholder='Password', name='password')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 Re-type Your Password
+		input#register_repassword.form-control.placeholder-no-fix(type='password', autocomplete='off', placeholder='Re-type Your Password', name='rpassword')
+	p.hint  请输入您的个人信息: 
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 姓名
+		input.form-control.placeholder-no-fix(type='text', placeholder='姓名', name='fullname')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 单位/学校
+		input.form-control.placeholder-no-fix(type='text', placeholder='单位/学校', name='school')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 通讯地址
+		input.form-control.placeholder-no-fix(type='text', placeholder='通讯地址', name='address')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 邮政编码
+		input.form-control.placeholder-no-fix(type='text', placeholder='邮政编码', name='zipcode')
+	.form-group
+		label.control-label.visible-ie8.visible-ie9 手机
+		input.form-control.placeholder-no-fix(type='text', placeholder='手机', name='cellphone')
+	.form-group
+	label.control-label.visible-ie8.visible-ie9 性别
+	select.form-control(name='gender')
+		option(value='') 性别
+		option(value='male') 男
+		option(value='female') 女
+	.form-group
+	label.control-label.visible-ie8.visible-ie9 职位
+	select.form-control(name='title')
+		option(value='') 职位
+		option(value='prof') 教授/研究员
+		option(value='asprof') 副教授/副研究员
+		option(value='lect') 讲师/助理研究员
+		option(value='stu') 学生
+		option(value='other') 其他
+	.form-group.margin-top-20.margin-bottom-20
+		label.mt-checkbox.mt-checkbox-outline
+			input(type='checkbox', name='tnc')
+			|  我保证填写信息正确
+			span
+		#register_tnc_error  
+	.form-actions
+		button#register-back-btn.btn.green.btn-outline(type='button') Back
+		button#register-submit-btn.btn.btn-success.uppercase.pull-right(type='submit') Submit

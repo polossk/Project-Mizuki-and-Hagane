@@ -1,0 +1,46 @@
+//- includes/profile.pug
+
+mixin form_select(list, selected)
+	each val, index in list
+		if (val == selected)
+			option(value= val, selected="selected") #{index}
+		else
+			option(value= val) #{index}
+
+- var genderlist = {'性别': '', '男': 'male', '女': 'female' }
+
+- var titlelist = { '职位' : '', '教授/研究员' : 'prof', '副教授/副研究员' : 'asprof', '讲师/助理研究员' : 'lect', '学生' : 'stu', '其他' : 'other' }
+
+.alert.alert-danger
+	button.close(data-close='alert')
+	span 住宿预定现在可以录入您的预计入住时间与预计离开时间
+
+form.profile-form(role='form', action='/tryprofile', method='post')
+	.form-group.hide
+		label.control-label username
+		input.form-control.placeholder-no-fix(type='text', placeholder='username', name='username', value= user.username)
+	.form-group
+		label.control-label 姓名
+		input.form-control.placeholder-no-fix(type='text', placeholder='姓名', name='fullname', value= user.fullname)
+	.form-group
+		label.control-label 单位/学校
+		input.form-control.placeholder-no-fix(type='text', placeholder='单位/学校', name='school', value= user.school)
+	.form-group
+		label.control-label 通讯地址
+		input.form-control.placeholder-no-fix(type='text', placeholder='通讯地址', name='address', value= user.address)
+	.form-group
+		label.control-label 邮政编码
+		input.form-control.placeholder-no-fix(type='text', placeholder='邮政编码', name='zipcode', value= user.zipcode)
+	.form-group
+		label.control-label 手机
+		input.form-control.placeholder-no-fix(type='text', placeholder='手机', name='cellphone', value= user.cellphone)
+	.form-group
+		label.control-label 性别
+		select.form-control(name='gender')
+			+form_select(genderlist, user.gender)
+	.form-group
+		label.control-label 职位
+		select.form-control(name='title')
+			+form_select(titlelist, user.title)
+	.margiv-top-10
+		button#profile-submit-btn.btn.btn-success(type='submit') 保存修改

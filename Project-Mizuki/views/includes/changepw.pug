@@ -1,0 +1,13 @@
+//- includes/changepw.pug
+form.changepw-form(action='/trychangepw', method='post')
+	.form-group.hide
+		label.control-label.hide username
+		input.form-control.placeholder-no-fix(type='text', autocomplete='off', name='username', value= user.username)
+	.form-group
+		label.control-label 新密码
+		input#changepw_npassword.form-control.placeholder-no-fix(type='password', autocomplete='off', placeholder='New Password', name='npassword')
+	.form-group
+		label.control-label 再次输入新密码
+		input#changepw_repassword.form-control.placeholder-no-fix(type='password', autocomplete='off', placeholder='Re-type Your New Password', name='rpassword')
+	.margin-top-10
+		button#changepw-submit-btn.btn.btn-success(type='submit') 确认修改

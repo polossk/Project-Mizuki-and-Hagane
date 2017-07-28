@@ -1,0 +1,53 @@
+//- includes/pagehead.pug
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN CUSTOM VARIABLES -->
+- var _home = "http://localhost:3000/"
+- var _name = "Mizuki"
+<!-- END CUSTOM VARIABLES -->
+
+<!-- BEGIN HEAD -->
+head
+	meta(charset="utf-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	meta(name="viewport" content="width=device-width, initial-scale=1")
+	title= title
+
+	// BEGIN GLOBAL MANDATORY STYLES
+	link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all', rel='stylesheet', type='text/css')
+	link(href='../assets/global/plugins/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+	link(href='../assets/global/plugins/simple-line-icons/simple-line-icons.min.css', rel='stylesheet', type='text/css')
+	link(href='../assets/global/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+	link(href='../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css', rel='stylesheet', type='text/css')
+	// END GLOBAL MANDATORY STYLES
+
+	// BEGIN THEME STYLES
+	link(href='../assets/global/css/components.css', rel='stylesheet', type='text/css')
+	link(href='../assets/global/css/plugins.css', rel='stylesheet', type='text/css')
+	link(href='../assets/layouts/layout/css/layout.css', rel='stylesheet', type='text/css')
+	link#style_color(href='../assets/layouts/layout/css/themes/default.css', rel='stylesheet', type='text/css')
+	link(href='../assets/layouts/layout/css/custom.css', rel='stylesheet', type='text/css')
+	// END THEME STYLES
+
+	// BEGIN PAGE LEVEL PLUGINS
+	link(href='../assets/global/plugins/select2/css/select2.min.css', rel='stylesheet', type='text/css')
+	link(href='../assets/global/plugins/select2/css/select2-bootstrap.min.css', rel='stylesheet', type='text/css')
+	// END PAGE LEVEL PLUGINS
+
+	// BEGIN THEME GLOBAL STYLES
+	link#style_components(href='../assets/global/css/components-md.min.css', rel='stylesheet', type='text/css')
+	link(href='../assets/global/css/plugins-md.min.css', rel='stylesheet', type='text/css')
+	// END THEME GLOBAL STYLES
+
+	// BEGIN PAGE LEVEL STYLES
+	link(href='../assets/pages/css/login.min.css', rel='stylesheet', type='text/css')
+	link(href='../assets/pages/css/profile.min.css', rel='stylesheet', type='text/css')
+	// END PAGE LEVEL STYLES
+	
+	// BEGIN THEME LAYOUT STYLES
+	// END THEME LAYOUT STYLES
+
+// END HEAD

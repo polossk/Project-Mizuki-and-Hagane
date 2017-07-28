@@ -1,0 +1,68 @@
+//- includes/paying.pug
+
+mixin form_radio_aye(flag, rname)
+	if (flag)
+		input(type='radio', checked='checked', name= rname, value='true')
+	else
+		input(type='radio', name= rname, value='true')
+
+mixin form_radio_nay(flag, rname)
+	if (flag)
+		input(type='radio', name= rname, value='false')
+	else
+		input(type='radio', checked='checked', name= rname, value='false')
+
+mixin form_radio(flag, rname)
+	.form-control
+		span.col-md-6
+			+form_radio_aye(flag, rname)
+			|   是
+		span.col-md-6
+			+form_radio_nay(flag, rname)
+			|   否
+
+.alert.alert-danger
+	span 仅提供普通增值税发票，如需其它类型发票，请联系会务组邮箱 cscm2017@163.com
+
+.alert.alert-danger
+	span 由于参会人数多，现场缴费注册将无法及时提供发票，敬请谅解
+
+case user.paidstatus
+	when 2
+		.alert.alert-success
+			button.close(data-close='alert')
+			span 会务组已确认您已缴清所有费用
+	when 1
+		.alert.alert-info
+			button.close(data-close='alert')
+			span 会务组正在确认您的缴费信息，请您耐心等待
+	when 0
+		.alert.alert-warning
+			button.close(data-close='alert')
+			span 汇款时请在附言中注明自己的 ID 编号（您的ID是：#{user.usershowid}）
+		.alert.alert-danger
+			button.close(data-close='alert')
+			span 如果完成注册并缴费，请确认并且填写发票抬头信息
+
+		form.pay-form(role='form', action='/trypay', method='post')
+			.form-group.hide
+				label.control-label username
+				input.form-control.placeholder-no-fix(type='text', placeholder='username', name='username', value= user.username)
+			.form-group
+				label.control-label 是否缴清款项
+				+form_radio(user.paid, 'paid')
+			.margiv-top-10
+				button#pay-submit-btn.btn.btn-success(type='submit') 确认提交
+
+form.pay-form(role='form', action='/trypaytitle', method='post')
+	.form-group.hide
+		label.control-label username
+		input.form-control.placeholder-no-fix(type='text', placeholder='username', name='username', value= user.username)
+	.form-group
+		label.control-label 发票抬头
+		input.form-control.placeholder-no-fix(type='text', placeholder='发票抬头', name='paidtitle', value= user.paidtitle)
+	.form-group
+		label.control-label 纳税人识别号
+		input.form-control.placeholder-no-fix(type='text', placeholder='纳税人识别号', name='paidtitlenumber', value= user.paidtitlenumber)
+	.margiv-top-10
+		button#pay-submit-btn.btn.btn-success(type='submit') 修改发票抬头

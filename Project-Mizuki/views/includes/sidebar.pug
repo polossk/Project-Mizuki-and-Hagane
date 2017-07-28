@@ -1,0 +1,78 @@
+//- includes/sidebar.pug
+// BEGIN SIDEBAR
+.page-sidebar-wrapper
+	// BEGIN SIDEBAR
+	.page-sidebar.navbar-collapse.collapse
+		// BEGIN SIDEBAR MENU
+		ul.page-sidebar-menu.page-header-fixed(data-keep-expanded='false', data-auto-scroll='true', data-slide-speed='200', style='padding-top: 20px')
+			// BEGIN SIDEBAR TOGGLER BUTTON
+			li.sidebar-toggler-wrapper.hide
+				.sidebar-toggler
+					span
+			// END SIDEBAR TOGGLER BUTTON
+			li.nav-item.start.active
+				a.nav-link.nav-toggle(href='http://account.cscm2017.com/home/account')
+					i.fa.fa-home
+					span.title 个人资料
+			li.heading
+				h3.uppercase 会议相关信息
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/conference_org.html')
+					i.fa.fa-sitemap
+					span.title 会议组织
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/')
+					i.fa.fa-briefcase
+					span.title 会议通知
+					span.arrow
+				ul.sub-menu
+					li.nav-item
+						a.nav-link(href='http://www.cscm2017.com/announcement_1.html')
+							span.title 第一轮会议通知
+					li.nav-item
+						a.nav-link(href='http://www.cscm2017.com/announcement_2.html')
+							span.title 专题讨论申请
+			
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/conference_cal.html')
+					i.fa.fa-calendar
+					span.title 重要日期
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/conference_pay.html')
+					i.fa.fa-puzzle-piece
+					span.title 缴费通知
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/conference_hot.html')
+					i.fa.fa-cubes
+					span.title 酒店信息
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/conference_tar.html')
+					i.fa.fa-map
+					span.title 交通信息
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/conference_com.html')
+					i.fa.fa-envelope
+					span.title 联系方式
+			li.nav-item
+				a.nav-link.nav-toggle(href='http://www.cscm2017.com/conference_host.html')
+					i.fa.fa-university
+					span.title 承办方简介
+			li.nav-item.active(style='padding-top: 4em')
+				a.nav-link.nav-toggle(href='#')
+					div(style='height: 38px;line-height: 38px; float: left')
+						i.fa.fa-exclamation-circle(style='height: 38px; line-height: 38px;')
+					.title(style='padding-left: 30px;')
+						| 注册开放时间
+						br
+						| 2017-03-10 00:00
+			li.nav-item.active
+				a.nav-link.nav-toggle(href='#')
+					div(style='height: 38px;line-height: 38px; float: left')
+						i.fa.fa-exclamation-circle(style='height: 38px; line-height: 38px;')
+					.title(style='padding-left: 30px;')
+						| 注册截止时间
+						br
+						| 2017-05-20 00:00
+		// END SIDEBAR MENU
+	// END SIDEBAR
+// END SIDEBAR

@@ -1,0 +1,86 @@
+//- includes/accountsetting.pug
+// BEGIN CONTENT
+.page-content-wrapper
+	// BEGIN CONTENT BODY
+	.page-content
+		// BEGIN PAGE HEADER
+		// BEGIN PAGE BAR
+		.page-bar
+			ul.page-breadcrumb
+				li
+					a(href='#') Home
+					i.fa.fa-circle
+				li
+					span 个人信息
+		// END PAGE BAR
+		// BEGIN PAGE TITLE
+		h1.page-title 个人信息 | 详细
+		// END PAGE TITLE
+		// END PAGE HEADER
+		.row
+			.col-md-12
+				// BEGIN PROFILE SIDEBAR
+				.profile-sidebar
+					// PORTLET MAIN
+					.portlet.light.profile-sidebar-portlet
+						// SIDEBAR USER TITLE
+						.profile-usertitle
+							.profile-usertitle-name  #{user.fullname} 
+							.profile-usertitle-job #{user.school} | #{user.title_cn}
+							.profile-usertitle-job 用户ID | No. #{user.usershowid}
+						// END SIDEBAR USER TITLE
+						// SIDEBAR MENU
+						.profile-usermenu
+							ul.nav
+								li.active
+									a(href='http://account.cscm2017.com/home/account')
+										i.icon-settings
+										|  账户信息
+						// END MENU
+					// END PORTLET MAIN
+				// END BEGIN PROFILE SIDEBAR
+				// BEGIN PROFILE CONTENT
+				.profile-content
+					.row
+						.col-md-12
+							.portlet.light
+								.portlet-title.tabbable-line
+									.caption.caption-md
+										i.icon-globe.theme-font.hide
+										span.caption-subject.font-blue-madison.bold.uppercase 账户信息
+									ul.nav.nav-tabs
+										li.active
+											a(href='#tab_1_1', data-toggle='tab') 个人信息
+										li
+											a(href='#tab_1_2', data-toggle='tab') 参会报告登记
+										li
+											a(href='#tab_1_3', data-toggle='tab') 缴费确认
+										li
+											a(href='#tab_1_4', data-toggle='tab') 住宿预定
+										li
+											a(href='#tab_1_5', data-toggle='tab') 修改密码
+								.portlet-body
+									.tab-content
+										// PERSONAL INFO TAB
+										#tab_1_1.tab-pane.active
+											include profile
+										// END PERSONAL INFO TAB
+										// REPORT TAB
+										#tab_1_2.tab-pane
+											include report
+										// END REPORT TAB
+										// PAYING TAB
+										#tab_1_3.tab-pane
+											include paying
+										// END PAYING TAB
+										// HOTEL TAB
+										#tab_1_4.tab-pane
+											include hotel
+										// END HOTEL TAB
+										// CHANGE PASSWORD TAB
+										#tab_1_5.tab-pane
+											include changepw
+										// END CHANGE PASSWORD TAB
+				// END PROFILE CONTENT
+	// END CONTENT BODY
+// END CONTENT

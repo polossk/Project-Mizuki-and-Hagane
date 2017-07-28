@@ -1,0 +1,98 @@
+//- includes/hotel.pug
+
+mixin form_radio_aye(flag, rname)
+	if (flag)
+		input#hotel_true(type='radio', checked='checked', name= rname, value='true')
+	else
+		input#hotel_true(type='radio', name= rname, value='true')
+
+mixin form_radio_nay(flag, rname)
+	if (flag)
+		input#hotel_false(type='radio', name= rname, value='false')
+	else
+		input#hotel_false(type='radio', checked='checked', name= rname, value='false')
+
+mixin form_radio(flag, rname)
+	.form-control
+		span.col-md-6
+			+form_radio_aye(flag, rname)
+			|   是
+		span.col-md-6
+			+form_radio_nay(flag, rname)
+			|   否
+
+mixin form_select(list, selected)
+	each val, index in list
+		if (val == selected)
+			option(value= val, selected="selected") #{index}
+		else
+			option(value= val) #{index}
+
+- var roomlist = { '请选择房间类型' : '', '标准间（单住）' : 'stand_s', '标准间（合住）' : 'stand_d', '大床房' : 'bed' }
+
+- var datemm= { '请选择月份' : '', '7月' : '07', '8月' : '08' }
+
+- var datedd = { '请选择日期' : '', '1日': '01', '2日': '02', '3日': '03', '4日': '04', '5日': '05', '6日': '06', '7日': '07', '8日': '08', '9日': '09', '10日': '10', '11日': '11', '12日': '12', '13日': '13', '14日': '14', '15日': '15', '16日': '16', '17日': '17', '18日': '18', '19日': '19', '20日': '20', '21日': '21', '22日': '22', '23日': '23', '24日': '24', '25日': '25', '26日': '26', '27日': '27', '28日': '28', '29日': '29', '30日': '30', '31日': '31' }
+
+.alert.alert-danger
+	button.close(data-close='alert')
+	span  如果申请住宿，请确认下方信息并保存
+
+.portlet.light.bordered
+	.portlet-title
+		.caption
+			i.fa.fa-share.font-dark.hide
+			span.caption-subject.font-dark.bold.uppercase 会议住宿酒店：陕西宾馆（陕西丈八沟宾馆，丈八北路一号）
+	.portlet-body
+		table(border="1", style="align: center; line-height: 40px;", width="80%")
+			tr(bgcolor="#E1DCDF")
+				th(rowspan="2", style="text-align: center;") 客房规格
+				th(colspan="2", style="text-align: center;") 会议协议价
+			tr(bgcolor="#E7E3E5")
+				th(style="text-align: center;") 房价（不含早餐）
+				th(style="text-align: center;") 每日早餐费
+			tr(bgcolor="#EDE9DB")
+				th(style="text-align: center;") 标间
+				th(style="text-align: center;") 400 元/天
+				th(style="text-align: center;") 40 元/位
+			tr(bgcolor="#E7E3E5")
+				th(style="text-align: center;") 大床间
+				th(style="text-align: center;") 400 元/天
+				th(style="text-align: center;") 40 元/位
+		p
+			br
+			| 注：网上注册时需填写是否在陕西宾馆住宿，拟在陕西宾馆住宿的需选择客房规格。
+
+form.hotel-form(role='form', action='/tryhotel', method='post')
+	.form-group.hide
+		label.control-label username
+		input.form-control.placeholder-no-fix(type='text', placeholder='username', name='username', value= user.username)
+	.form-group
+		label.control-label 是否在陕西宾馆住宿
+		+form_radio(user.goingtohotel, 'goingtohotel')
+	#hotel_content
+		.form-group
+			label.control-label 房间类型
+			select.form-control(name='hotelroom')
+				+form_select(roomlist, user.hotelroom)
+		.form-group
+			label.control-label 预计入住时间
+			.form-group
+				span.col-md-6
+					select.form-control(name='hoteltime0mm')
+						+form_select(datemm, user.hoteltime0mm)
+				span.col-md-6
+					select.form-control(name='hoteltime0dd')
+						+form_select(datedd, user.hoteltime0dd)
+		.form-group
+			label.control-label 预计离开时间
+			.form-group
+				span.col-md-6
+					select.form-control(name='hoteltime1mm')
+						+form_select(datemm, user.hoteltime1mm)
+				span.col-md-6
+					select.form-control(name='hoteltime1dd')
+						+form_select(datedd, user.hoteltime1dd)
+	.margiv-top-10
+		button#hotel-submit-btn.btn.btn-success(type='submit') 保存修改
+hr

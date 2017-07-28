@@ -1,0 +1,40 @@
+//- includes/pagehead.pug
+// BEGIN HEADER
+.page-header.navbar.navbar-fixed-top
+	// BEGIN HEADER INNER
+	.page-header-inner
+		// BEGIN LOGO
+		.page-logo
+			a(href='http://www.cscm2017.com/')
+				img.logo-default(src='../assets/layouts/layout/img/logo.png', alt='logo')
+			.menu-toggler.sidebar-toggler
+				span
+		// END LOGO
+		// BEGIN RESPONSIVE MENU TOGGLER
+		a.menu-toggler.responsive-toggler(href='javascript:;', data-toggle='collapse', data-target='.navbar-collapse')
+			span
+		// END RESPONSIVE MENU TOGGLER
+		// BEGIN TOP NAVIGATION MENU
+		.top-menu
+			ul.nav.navbar-nav.pull-right
+				// BEGIN USER LOGIN DROPDOWN
+				// DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte
+				li.dropdown.dropdown-user
+					a.dropdown-toggle(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+						img.img-circle(alt='', src='../assets/layouts/layout/img/avatar.png')
+						span.username.username-hide-on-mobile  #{user.fullname}
+						i.fa.fa-angle-down
+					ul.dropdown-menu.dropdown-menu-default
+						li
+							a(href='http://account.cscm2017.com/home/account')
+								i.icon-user
+								|  个人资料
+						li.divider
+						li
+							a(href='http://account.cscm2017.com/logout')
+								i.icon-key
+								|  退出登录
+				// END USER LOGIN DROPDOWN
+		// END TOP NAVIGATION MENU
+	// END HEADER INNER
+// END HEADER
